@@ -51,6 +51,15 @@ const setLocalStorage = (ele) => {
   localStorage.setItem("data", JSON.stringify(setter));
 };
 
+const arrayEmployeeFilter = [];
+
+const getLocalStorageData = JSON.parse(localStorage.getItem("data"));
+for (let index = 0; index < getLocalStorageData.length; index++) {
+  let newEmployee = new Employee(getLocalStorageData[index].employeeId, getLocalStorageData[index].employeeName, getLocalStorageData[index].employeeDepartment, getLocalStorageData[index].employeeLevel, getLocalStorageData[index].employeeImage);
+  arrayEmployeeFilter.push(newEmployee);
+}
+
+
 Employee.prototype.render = function () {
   let div = document.createElement("div");
   let childDiv = document.createElement("div");
@@ -101,21 +110,20 @@ const initialRender = () => {
 
 initialRender();
 
+
 let filteredData = (event) => {
   main.innerHTML = "";
-  getLocalStorageData()
-    .filter((ele) => ele.employeeDepartment == event.target.value)
+  arrayEmployeeFilter
+    .filter((ele) => {
+      return ele.employeeDepartment == event.target.value;
+    })
     .forEach((ele) => {
       main.appendChild(ele.render());
     });
 
   event.target.value == "allDepartment"
-    ? getLocalStorageData().forEach((ele) => {
-      main.appendChild(ele.render());
-    })
+    ? arrayEmployeeFilter.forEach((ele) => {
+        main.appendChild(ele.render());
+      })
     : "";
 };
-
-getLocalStorageData().forEach((ele) => {
-  main.appendChild(ele.render());
-});

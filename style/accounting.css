@@ -12,6 +12,13 @@
     background-color: rgb(38, 99, 129);
     display: flex;
   }
+  .accountingTable {
+    justify-content: space-between;
+    table-layout: fixed;
+    text-align: left;
+    margin: auto;
+    padding: 20px;
+  }
   header {
     background-color: rgb(55, 42, 42);
     border-bottom: rgb(255, 255, 255);
