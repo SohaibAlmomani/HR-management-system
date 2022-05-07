@@ -29,7 +29,7 @@ Employee.prototype.salary = function () {
 };
 
 new Employee(1000, "Ghazi Samer", "Administration", "Senior", "./assets/2.jpeg");
-new Employee(1001, "Lana Ali", "Finance", "Senior", "../assets/1.jpg");
+new Employee(1001, "Lana Ali", "Finance", "Senior", "../assets/1.jpeg");
 new Employee(1002, "Tamara Ayoub", "Marketing", "Senior", "../assets/5.jpeg");
 new Employee(1003, "Safi Walid", "Administration", "Mid-Senior", "../assets/3.jpeg");
 new Employee(1004, "Omar Zaid", "Development", "Senior", "../assets/4.jpeg");
